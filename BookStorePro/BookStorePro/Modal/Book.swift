@@ -74,5 +74,10 @@ class Book {
         return _url
     }
     
+    init(_ title: String!,_ author: String!) {
+        self._author = author
+        self._title = title
+    }
+    
 }
 

@@ -18,4 +18,9 @@ class BookCell: UITableViewCell {
         // Initialization code
     }
     
+    func updateBookCell(with book: Book){
+        titleLbl.text = book.title
+        authorsLbl.text = book.author
+    }
+    
 }
