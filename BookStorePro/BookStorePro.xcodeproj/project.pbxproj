@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		DF10C47F2047BDD700F270C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF10C47E2047BDD700F270C2 /* AppDelegate.swift */; };
-		DF10C4812047BDD700F270C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF10C4802047BDD700F270C2 /* ViewController.swift */; };
+		DF10C4812047BDD700F270C2 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF10C4802047BDD700F270C2 /* BooksViewController.swift */; };
 		DF10C4842047BDD700F270C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF10C4822047BDD700F270C2 /* Main.storyboard */; };
 		DF10C4872047BDD700F270C2 /* BookStorePro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF10C4852047BDD700F270C2 /* BookStorePro.xcdatamodeld */; };
 		DF10C4892047BDD700F270C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF10C4882047BDD700F270C2 /* Assets.xcassets */; };
 		DF10C48C2047BDD700F270C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF10C48A2047BDD700F270C2 /* LaunchScreen.storyboard */; };
+		DF10C4972047CBA800F270C2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF10C4962047CBA800F270C2 /* BookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DF10C47B2047BDD600F270C2 /* BookStorePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookStorePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF10C47E2047BDD700F270C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF10C4802047BDD700F270C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF10C4802047BDD700F270C2 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		DF10C4832047BDD700F270C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF10C4862047BDD700F270C2 /* BookStorePro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookStorePro.xcdatamodel; sourceTree = "<group>"; };
 		DF10C4882047BDD700F270C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF10C48B2047BDD700F270C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF10C48D2047BDD700F270C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF10C4962047CBA800F270C2 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		DF10C47D2047BDD600F270C2 /* BookStorePro */ = {
 			isa = PBXGroup;
 			children = (
+				DF10C4952047C9CB00F270C2 /* Controller */,
+				DF10C4942047C9C100F270C2 /* View */,
+				DF10C4932047C9B700F270C2 /* Modal */,
 				DF10C47E2047BDD700F270C2 /* AppDelegate.swift */,
-				DF10C4802047BDD700F270C2 /* ViewController.swift */,
-				DF10C4822047BDD700F270C2 /* Main.storyboard */,
 				DF10C4882047BDD700F270C2 /* Assets.xcassets */,
 				DF10C48A2047BDD700F270C2 /* LaunchScreen.storyboard */,
 				DF10C48D2047BDD700F270C2 /* Info.plist */,
 				DF10C4852047BDD700F270C2 /* BookStorePro.xcdatamodeld */,
 			);
 			path = BookStorePro;
+			sourceTree = "<group>";
+		};
+		DF10C4932047C9B700F270C2 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		DF10C4942047C9C100F270C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF10C4962047CBA800F270C2 /* BookCell.swift */,
+				DF10C4822047BDD700F270C2 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF10C4952047C9CB00F270C2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF10C4802047BDD700F270C2 /* BooksViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF10C4812047BDD700F270C2 /* ViewController.swift in Sources */,
+				DF10C4972047CBA800F270C2 /* BookCell.swift in Sources */,
+				DF10C4812047BDD700F270C2 /* BooksViewController.swift in Sources */,
 				DF10C4872047BDD700F270C2 /* BookStorePro.xcdatamodeld in Sources */,
 				DF10C47F2047BDD700F270C2 /* AppDelegate.swift in Sources */,
 			);
@@ -281,11 +309,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = STGTWG3DDB;
 				INFOPLIST_FILE = BookStorePro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.preethichimerla.BookStorePro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -296,11 +325,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = STGTWG3DDB;
 				INFOPLIST_FILE = BookStorePro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.preethichimerla.BookStorePro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
