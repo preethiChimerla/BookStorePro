@@ -18,10 +18,6 @@ class BooksViewController: UIViewController{
         super.viewDidLoad()
         booksTableView.delegate = self
         booksTableView.dataSource = self
-        let book1 = Book("My Life Story", "Preethi")
-        let book2 = Book("Success Story", "Chimerla")
-        bookList.append(book1)
-        bookList.append(book2)
     }
 }
 
