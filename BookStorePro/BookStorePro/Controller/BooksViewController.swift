@@ -18,7 +18,23 @@ class BooksViewController: UIViewController{
         super.viewDidLoad()
         booksTableView.delegate = self
         booksTableView.dataSource = self
+        getAllBooks()
     }
+    
+    func getAllBooks() {
+        BooksAPIService.getAllBooks() { (books) in
+            if books == nil {
+                let booksErrorAlert = UIAlertController(title: "API failed to respond",
+                                                        message: "Unable to retrieve books. Please try again later.",
+                                                        preferredStyle: .alert)
+                self.present(booksErrorAlert, animated: true, completion: nil)
+            } else {
+                self.bookList = books!
+                self.booksTableView.reloadData()
+            }
+        }
+    }
+    
 }
 
 extension BooksViewController: UITableViewDelegate, UITableViewDataSource {
@@ -34,6 +50,7 @@ extension BooksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell") as? BookCell {
             let book = bookList[indexPath.row]
