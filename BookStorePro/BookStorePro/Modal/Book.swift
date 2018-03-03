@@ -78,7 +78,7 @@ class Book {
         self._author = bookDict["author"] as? String
         self._categories = bookDict["categories"] as? String
         self._id = bookDict["id"] as? Int
-        self._lastCheckedOut = bookDict["lastCheckedOut"] as? String
+        self._lastCheckedOut = self.formatDate(bookDict["lastCheckedOut"] as? String)
         self._lastCheckedOutBy = bookDict["lastCheckedOutBy"] as? String
         self._publisher = bookDict["publisher"] as? String
         self._title = bookDict["title"] as? String
@@ -90,6 +90,17 @@ class Book {
         self._author = author
         self._publisher = publisher
         self._categories = categories
+    }
+    
+    func formatDate(_ dateToFormat: String?) -> String {
+        if dateToFormat == nil {
+            return ""
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date: Date? = dateFormatter.date(from: "2014-10-1 19:16:11")
+        dateFormatter.dateFormat = "MMMM d, yyyy h:MM a"
+        return dateFormatter.string(from: date!)
     }
     
 }

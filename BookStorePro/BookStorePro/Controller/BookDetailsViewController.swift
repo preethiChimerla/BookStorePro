@@ -23,14 +23,6 @@ class BookDetailsViewController: UIViewController {
         self.setBookDetails()
     }
 
-    private func setBookDetails() -> Void {
-        self.bookTitleLbl.text = selectedBook.title
-        self.bookAuthorsLbl.text = selectedBook.author
-        self.bookPublishersLbl.text = selectedBook.publisher
-        self.bookTagsLbl.text = selectedBook.categories
-        self.bookCheckoutLbl.text = selectedBook.lastCheckedOutBy!.count > 0 ? "\(selectedBook.lastCheckedOutBy!) @ \(selectedBook.lastCheckedOut!)" : "-"
-    }
-
     @IBAction func onCheckOutClicked(_ sender: UIButton) {
         self.popCheckoutFormDialog()
     }
@@ -41,6 +33,13 @@ class BookDetailsViewController: UIViewController {
         self.present(shareVC, animated: true, completion: {})
     }
     
+    private func setBookDetails() -> Void {
+        self.bookTitleLbl.text = selectedBook.title
+        self.bookAuthorsLbl.text = selectedBook.author
+        self.bookPublishersLbl.text = selectedBook.publisher
+        self.bookTagsLbl.text = selectedBook.categories
+        self.bookCheckoutLbl.text = selectedBook.lastCheckedOutBy!.count > 0 ? "\(selectedBook.lastCheckedOutBy!) @ \(selectedBook.lastCheckedOut!)" : "-"
+    }
     
     private func popCheckoutFormDialog() {
         let checkoutForm = UIAlertController(title: "Checkout Form",
