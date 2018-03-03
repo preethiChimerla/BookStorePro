@@ -98,7 +98,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="booksTableView" destination="7FC-3E-PYS" id="sk2-3X-SdJ"/>
-                        <segue destination="O5R-dX-2DM" kind="show" identifier="bookDetailsSegue" id="ra2-Vl-cge"/>
+                        <segue destination="O5R-dX-2DM" kind="show" identifier="bookDetailsSegue" id="cLh-61-jXi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -231,6 +231,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7BV-aR-S2I"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Details" id="CT9-g9-81d">
+                        <barButtonItem key="backBarButtonItem" title="Books" id="jIQ-8p-UgW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="u5y-dx-4ri">
+                            <connections>
+                                <action selector="onShareClicked:" destination="O5R-dX-2DM" id="rCD-RO-6T4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bookAuthorsLbl" destination="tx0-ZT-aq3" id="MMG-T5-8FO"/>
                         <outlet property="bookCheckoutLbl" destination="afG-5p-XVm" id="L87-Ee-SlE"/>
@@ -241,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUs-gq-JJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2551.1999999999998" y="-543.77811094452773"/>
+            <point key="canvasLocation" x="-2638" y="-545"/>
         </scene>
         <!--Add Book View Controller-->
         <scene sceneID="a7L-Cv-Psh">

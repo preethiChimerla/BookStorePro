@@ -35,6 +35,13 @@ class BookDetailsViewController: UIViewController {
         self.popCheckoutFormDialog()
     }
     
+    @IBAction func onShareClicked(_ sender: Any) {
+        let shareContent = "\(selectedBook.title!) by \(selectedBook.author!). Its a great Book to read!"
+        let shareVC = UIActivityViewController(activityItems: [shareContent], applicationActivities: nil)
+        self.present(shareVC, animated: true, completion: {})
+    }
+    
+    
     private func popCheckoutFormDialog() {
         let checkoutForm = UIAlertController(title: "Checkout Form",
                                       message: "Please enter your name:",
