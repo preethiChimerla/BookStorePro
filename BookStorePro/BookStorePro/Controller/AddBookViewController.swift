@@ -33,6 +33,7 @@ class AddBookViewController: UIViewController {
                     self.popAlert(title: "Error", message: "Unable to create new Book, please try again!")
                 } else {
                     self.popAlert(title: "Success", message: "Successfuly create a new book")
+                    self.clearFormFields()
                 }
             }
         } else {
@@ -48,9 +49,7 @@ class AddBookViewController: UIViewController {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
-            self.clearFormFields()
-        }))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

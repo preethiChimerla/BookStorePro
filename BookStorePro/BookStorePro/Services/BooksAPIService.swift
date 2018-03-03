@@ -68,14 +68,10 @@ class BooksAPIService {
         }
     }
     
-    static func deleteAllBooks(completed: @escaping (Bool) -> Void) {
+    static func deleteAllBooks(completed: @escaping () -> Void) {
         let deleteAllBooksEndpoint = URL(string: API_ENDPOINT + "/clean")!
         Alamofire.request(deleteAllBooksEndpoint, method: .delete).responseJSON { (response) in
-            guard response.result.isSuccess else {
-                completed(false)
-                return
-            }
-            completed(true)
+            completed()
         }
     }
     

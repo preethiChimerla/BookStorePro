@@ -27,7 +27,6 @@ class BooksViewController: UIViewController{
     }
     
     func getAllBooks() {
-        print("GET BOOKS")
         BooksAPIService.getAllBooks() { (books) in
             if books == nil {
                 let booksErrorAlert = UIAlertController(title: "API failed to respond",
@@ -59,13 +58,9 @@ class BooksViewController: UIViewController{
     }
     
     private func deleteAllBooks() -> Void {
-        BooksAPIService.deleteAllBooks() { (isSuccess) in
-            if isSuccess {
-                self.popAlert(title: "Success", message: "Succesfuly deleted all books.")
-                self.booksTableView.reloadData()
-            } else {
-                self.popAlert(title: "Error", message: "Problem deleting all books, try again!")
-            }
+        BooksAPIService.deleteAllBooks() {
+            self.popAlert(title: "Success", message: "Succesfuly deleted all books.")
+            self.getAllBooks()
         }
     }
     
@@ -112,7 +107,7 @@ extension BooksViewController: UITableViewDelegate, UITableViewDataSource {
             let bookIdToDelete = bookList[indexPath.row].id!
             BooksAPIService.deleteBook(bookId: bookIdToDelete) { (isSuccess) in
                 if isSuccess {
-                    self.booksTableView.reloadData()
+                    self.getAllBooks()
                 } else {
                     self.popAlert(title: "Error", message: "Problem deleting the book, please try again later")
                 }
@@ -123,7 +118,7 @@ extension BooksViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "bookDetailsSegue") {
             let detailsViewController = segue.destination as? BookDetailsViewController
-            detailsViewController?.currentBook = self.selectedBook
+            detailsViewController?.selectedBook = self.selectedBook
         }
     }
 }
