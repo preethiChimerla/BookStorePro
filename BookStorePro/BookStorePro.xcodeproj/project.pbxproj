@@ -17,6 +17,7 @@
 		DF10C4972047CBA800F270C2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF10C4962047CBA800F270C2 /* BookCell.swift */; };
 		DF10C49B2047D13D00F270C2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF10C49A2047D13D00F270C2 /* Book.swift */; };
 		DF10C49E2049147400F270C2 /* BooksAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF10C49D2049147400F270C2 /* BooksAPIService.swift */; };
+		DF31CF77204ACC3300AFD673 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31CF76204ACC3300AFD673 /* AddBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DF10C4962047CBA800F270C2 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		DF10C49A2047D13D00F270C2 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		DF10C49D2049147400F270C2 /* BooksAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksAPIService.swift; sourceTree = "<group>"; };
+		DF31CF76204ACC3300AFD673 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				DF10C4802047BDD700F270C2 /* BooksViewController.swift */,
+				DF31CF76204ACC3300AFD673 /* AddBookViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				DF10C49E2049147400F270C2 /* BooksAPIService.swift in Sources */,
 				DF10C4812047BDD700F270C2 /* BooksViewController.swift in Sources */,
 				DF10C4872047BDD700F270C2 /* BookStorePro.xcdatamodeld in Sources */,
+				DF31CF77204ACC3300AFD673 /* AddBookViewController.swift in Sources */,
 				DF10C49B2047D13D00F270C2 /* Book.swift in Sources */,
 				DF10C47F2047BDD700F270C2 /* AppDelegate.swift in Sources */,
 			);

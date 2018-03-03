@@ -35,6 +35,12 @@ class BooksViewController: UIViewController{
         }
     }
     
+    @IBAction func onAddNewBookClick(_ sender: UIBarButtonItem) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let addBookVC = storyBoard.instantiateViewController(withIdentifier: "AddBookVC") as? AddBookViewController {
+            present(addBookVC, animated: true, completion: nil)
+        }
+    }
 }
 
 extension BooksViewController: UITableViewDelegate, UITableViewDataSource {

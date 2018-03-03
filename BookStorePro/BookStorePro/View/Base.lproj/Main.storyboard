@@ -11,6 +11,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Medium</string>
         </array>
         <array key="HelveticaNeueLights.ttc">
@@ -37,7 +38,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9R-2Y-dgA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="a9R-2Y-dgA">
                                                     <rect key="frame" x="15" y="2" width="345" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="u1v-3c-oSd"/>
@@ -83,7 +84,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Books" id="zpn-al-RkA">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="ED9-Is-VZ0"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="ED9-Is-VZ0">
+                            <connections>
+                                <action selector="onAddNewBookClick:" destination="BYZ-38-t0r" id="oib-FR-g63"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="booksTableView" destination="7FC-3E-PYS" id="sk2-3X-SdJ"/>
@@ -92,6 +97,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3306.4000000000001" y="142.57871064467767"/>
+        </scene>
+        <!--Add Book View Controller-->
+        <scene sceneID="a7L-Cv-Psh">
+            <objects>
+                <viewController storyboardIdentifier="AddBookVC" id="LAs-qY-49m" customClass="AddBookViewController" customModule="BookStorePro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kPC-23-xWY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6Q-Lp-pbv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ncu-sc-ZVq"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Add Book" id="OJ8-Me-5ij">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="la4-zh-O51">
+                                            <connections>
+                                                <action selector="onDoneClick:" destination="LAs-qY-49m" id="sM6-TI-oHK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="P0B-Ha-P2L">
+                                <rect key="frame" x="15" y="61" width="345" height="217"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-A3-zQd">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPv-n4-Z3O">
+                                        <rect key="frame" x="0.0" y="45" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-x7-dyR">
+                                        <rect key="frame" x="0.0" y="90" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHB-ES-LId">
+                                        <rect key="frame" x="0.0" y="135" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVX-pQ-Fxi">
+                                        <rect key="frame" x="0.0" y="180" width="345" height="37"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="onNewBookSubmit:" destination="LAs-qY-49m" eventType="touchUpInside" id="pZJ-sx-4uL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="217" id="O33-vI-9ag"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="217" id="YrW-29-yLa"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V6Q-Lp-pbv" firstAttribute="trailing" secondItem="jNe-5o-ZoT" secondAttribute="trailing" id="1u5-ji-nLS"/>
+                            <constraint firstItem="P0B-Ha-P2L" firstAttribute="top" secondItem="V6Q-Lp-pbv" secondAttribute="bottom" constant="17" id="GOL-Rb-i5z"/>
+                            <constraint firstItem="V6Q-Lp-pbv" firstAttribute="top" secondItem="kPC-23-xWY" secondAttribute="top" id="XR2-yR-CjF"/>
+                            <constraint firstItem="P0B-Ha-P2L" firstAttribute="leading" secondItem="jNe-5o-ZoT" secondAttribute="leading" constant="15" id="Yw4-xv-O0U"/>
+                            <constraint firstItem="V6Q-Lp-pbv" firstAttribute="leading" secondItem="jNe-5o-ZoT" secondAttribute="leading" id="axp-tz-iz4"/>
+                            <constraint firstItem="jNe-5o-ZoT" firstAttribute="trailing" secondItem="P0B-Ha-P2L" secondAttribute="trailing" constant="15" id="dgc-RC-gKJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jNe-5o-ZoT"/>
+                    </view>
+                    <connections>
+                        <outlet property="bookAuthor" destination="uPv-n4-Z3O" id="Sf4-g4-idf"/>
+                        <outlet property="bookCategories" destination="LHB-ES-LId" id="nET-pj-9OB"/>
+                        <outlet property="bookPublisher" destination="tYn-x7-dyR" id="nee-Uh-K3w"/>
+                        <outlet property="bookTitle" destination="NJs-A3-zQd" id="iMJ-mM-quV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4T-m2-KIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2551.1999999999998" y="136.28185907046478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M7v-UP-pHG">
