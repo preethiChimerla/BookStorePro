@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -107,7 +108,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6Q-Lp-pbv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ncu-sc-ZVq"/>
                                 </constraints>
@@ -122,27 +124,27 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="P0B-Ha-P2L">
-                                <rect key="frame" x="15" y="61" width="345" height="217"/>
+                                <rect key="frame" x="15" y="81" width="345" height="217"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-A3-zQd">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJs-A3-zQd">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPv-n4-Z3O">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Author(s)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPv-n4-Z3O">
                                         <rect key="frame" x="0.0" y="45" width="345" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-x7-dyR">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Publisher" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-x7-dyR">
                                         <rect key="frame" x="0.0" y="90" width="345" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHB-ES-LId">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Categories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHB-ES-LId">
                                         <rect key="frame" x="0.0" y="135" width="345" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -167,18 +169,18 @@
                         <constraints>
                             <constraint firstItem="V6Q-Lp-pbv" firstAttribute="trailing" secondItem="jNe-5o-ZoT" secondAttribute="trailing" id="1u5-ji-nLS"/>
                             <constraint firstItem="P0B-Ha-P2L" firstAttribute="top" secondItem="V6Q-Lp-pbv" secondAttribute="bottom" constant="17" id="GOL-Rb-i5z"/>
-                            <constraint firstItem="V6Q-Lp-pbv" firstAttribute="top" secondItem="kPC-23-xWY" secondAttribute="top" id="XR2-yR-CjF"/>
                             <constraint firstItem="P0B-Ha-P2L" firstAttribute="leading" secondItem="jNe-5o-ZoT" secondAttribute="leading" constant="15" id="Yw4-xv-O0U"/>
                             <constraint firstItem="V6Q-Lp-pbv" firstAttribute="leading" secondItem="jNe-5o-ZoT" secondAttribute="leading" id="axp-tz-iz4"/>
                             <constraint firstItem="jNe-5o-ZoT" firstAttribute="trailing" secondItem="P0B-Ha-P2L" secondAttribute="trailing" constant="15" id="dgc-RC-gKJ"/>
+                            <constraint firstItem="V6Q-Lp-pbv" firstAttribute="top" secondItem="kPC-23-xWY" secondAttribute="topMargin" id="zN1-5f-1Gw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jNe-5o-ZoT"/>
                     </view>
                     <connections>
-                        <outlet property="bookAuthor" destination="uPv-n4-Z3O" id="Sf4-g4-idf"/>
-                        <outlet property="bookCategories" destination="LHB-ES-LId" id="nET-pj-9OB"/>
-                        <outlet property="bookPublisher" destination="tYn-x7-dyR" id="nee-Uh-K3w"/>
-                        <outlet property="bookTitle" destination="NJs-A3-zQd" id="iMJ-mM-quV"/>
+                        <outlet property="bookAuthorLbl" destination="uPv-n4-Z3O" id="GDK-vV-x3y"/>
+                        <outlet property="bookCategoriesLbl" destination="LHB-ES-LId" id="jeI-Fx-eWK"/>
+                        <outlet property="bookPublisherLbl" destination="tYn-x7-dyR" id="6RP-TU-ynW"/>
+                        <outlet property="bookTitleLbl" destination="NJs-A3-zQd" id="PLG-WF-s3T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4T-m2-KIP" userLabel="First Responder" sceneMemberID="firstResponder"/>

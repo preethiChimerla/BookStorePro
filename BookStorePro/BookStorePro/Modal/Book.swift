@@ -85,5 +85,12 @@ class Book {
         self._url = bookDict["url"] as? String
     }
     
+    init(title: String, author: String, publisher: String, categories: String) {
+        self._title = title
+        self._author = author
+        self._publisher = publisher
+        self._categories = categories
+    }
+    
 }
 
