@@ -33,7 +33,7 @@ class BooksAPIService {
         }
     }
     
-    static func postNewBook(bookDict: Dictionary<String, String>, completed: @escaping (Bool) -> Void) {
+    static func postNewBook(_ bookDict: Dictionary<String, String>, completed: @escaping (Bool) -> Void) {
         let postBooksEndpoint = URL(string: API_ENDPOINT + "/books")!
         Alamofire.request(postBooksEndpoint, method: .post, parameters: bookDict, encoding: JSONEncoding.default).responseJSON { (response) in
             guard response.result.isSuccess else {
@@ -43,6 +43,41 @@ class BooksAPIService {
             completed(true)
         }
     }
+    
+    static func deleteBook(bookId: Int, completed: @escaping (Bool) -> Void) {
+        let deleteBookEndpoint = URL(string: API_ENDPOINT + "/books/\(bookId)")!
+        Alamofire.request(deleteBookEndpoint, method: .delete).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                completed(false)
+                return
+            }
+            completed(true)
+        }
+    }
+    
+    static func deleteAllBooks(completed: @escaping (Bool) -> Void) {
+        let deleteAllBooksEndpoint = URL(string: API_ENDPOINT + "/clean")!
+        Alamofire.request(deleteAllBooksEndpoint, method: .delete).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                completed(false)
+                return
+            }
+            completed(true)
+        }
+    }
+    
+    static func putCheckoutBook(_ checkoutForm: Dictionary<String, String>, bookId: Int, completed: @escaping (Book?) -> Void) {
+        let checkoutBookEndpoint = URL(string: API_ENDPOINT + "/books/\(bookId)")!
+        Alamofire.request(checkoutBookEndpoint, method: .put, parameters: checkoutForm, encoding: JSONEncoding.default).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                completed(nil)
+                return
+            }
+            let book = Book(response.result.value as! Dictionary<String, AnyObject>)
+            completed(book)
+        }
+    }
+    
 }
 
 

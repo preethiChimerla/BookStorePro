@@ -28,7 +28,7 @@ class AddBookViewController: UIViewController {
                 "publisher": bookPublisherLbl.text!,
                 "categories": bookCategoriesLbl.text!
             ]
-            BooksAPIService.postNewBook(bookDict: newBook) { (isSuccess) in
+            BooksAPIService.postNewBook(newBook) { (isSuccess) in
                 if !isSuccess {
                     self.popAlert(title: "Error", message: "Unable to create new Book, please try again!")
                 } else {

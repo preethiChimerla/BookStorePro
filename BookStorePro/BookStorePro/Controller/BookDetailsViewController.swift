@@ -1,0 +1,68 @@
+//
+//  BookDetailsViewController.swift
+//  BookStorePro
+//
+//  Created by preethi Reddy on 3/3/18.
+//  Copyright © 2018 com.preethichimerla. All rights reserved.
+//
+
+import UIKit
+
+class BookDetailsViewController: UIViewController {
+
+    @IBOutlet weak var bookTitleLbl: UILabel!
+    @IBOutlet weak var bookAuthorsLbl: UILabel!
+    @IBOutlet weak var bookPublishersLbl: UILabel!
+    @IBOutlet weak var bookTagsLbl: UILabel!
+    @IBOutlet weak var bookCheckoutLbl: UILabel!
+    
+    var selectedBook: Book!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setBookDetails()
+    }
+
+    private func setBookDetails() -> Void {
+        self.bookTitleLbl.text = selectedBook.title
+        self.bookAuthorsLbl.text = selectedBook.author
+        self.bookPublishersLbl.text = selectedBook.publisher
+        self.bookTagsLbl.text = selectedBook.categories
+        self.bookCheckoutLbl.text = selectedBook.lastCheckedOutBy!.count > 0 ? "\(selectedBook.lastCheckedOutBy!) @ \(selectedBook.lastCheckedOut!)" : "-"
+    }
+
+    @IBAction func onCheckOutClicked(_ sender: UIButton) {
+        self.popCheckoutFormDialog()
+    }
+    
+    private func popCheckoutFormDialog() {
+        let checkoutForm = UIAlertController(title: "Checkout Form",
+                                      message: "Please enter your name:",
+                                      preferredStyle: .alert)
+        checkoutForm.addTextField { (nameTextField: UITextField) in
+            nameTextField.placeholder = "FirstName LastName"
+        }
+        
+        checkoutForm.addAction(UIAlertAction(title: "Submit", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+            if let name = checkoutForm.textFields?.first?.text {
+                if name.count > 0 {
+                    self.checkoutBook(by: name)
+                }
+            }
+        }))
+        
+        checkoutForm.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+        
+        self.present(checkoutForm, animated: true, completion: nil)
+    }
+    
+    private func checkoutBook(by name: String!) {
+        let checkoutForm: Dictionary<String, String> = [
+            "lastCheckedOutBy": name
+        ]
+        BooksAPIService.putCheckoutBook(checkoutForm, bookId: self.selectedBook.id) { (updatedBook) in
+            self.selectedBook = updatedBook
+            self.setBookDetails()
+        }
+    }
+}
