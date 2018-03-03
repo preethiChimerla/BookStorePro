@@ -20,7 +20,9 @@ class BookDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setBookDetails()
+        // Even though we get complete Book details from selected row in table, we get the updated book from API in case book details
+        // are modified from another source.
+        self.getBookDetails()
     }
 
     @IBAction func onCheckOutClicked(_ sender: UIButton) {
@@ -31,6 +33,13 @@ class BookDetailsViewController: UIViewController {
         let shareContent = "\(selectedBook.title!) by \(selectedBook.author!). Its a great Book to read!"
         let shareVC = UIActivityViewController(activityItems: [shareContent], applicationActivities: nil)
         self.present(shareVC, animated: true, completion: {})
+    }
+    
+    private func getBookDetails() -> Void {
+        BooksAPIService.getBookWithId(bookURL: selectedBook.url) { (book) in
+            self.selectedBook = book
+            self.setBookDetails()
+        }
     }
     
     private func setBookDetails() -> Void {
@@ -67,8 +76,16 @@ class BookDetailsViewController: UIViewController {
             "lastCheckedOutBy": name
         ]
         BooksAPIService.putCheckoutBook(checkoutForm, bookId: self.selectedBook.id) { (updatedBook) in
-            self.selectedBook = updatedBook
-            self.setBookDetails()
+            if updatedBook != nil {
+                self.selectedBook = updatedBook
+                self.setBookDetails()
+            } else {
+                let alert = UIAlertController(title: "Error",
+                                              message: "Error checking out, please try again",
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
 }

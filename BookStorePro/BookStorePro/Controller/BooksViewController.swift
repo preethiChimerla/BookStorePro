@@ -19,14 +19,15 @@ class BooksViewController: UIViewController{
         super.viewDidLoad()
         booksTableView.delegate = self
         booksTableView.dataSource = self
-        getAllBooks()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.booksTableView.reloadData()
+        super.viewWillAppear(true)
+        self.getAllBooks()
     }
     
     func getAllBooks() {
+        print("GET BOOKS")
         BooksAPIService.getAllBooks() { (books) in
             if books == nil {
                 let booksErrorAlert = UIAlertController(title: "API failed to respond",
@@ -122,7 +123,7 @@ extension BooksViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "bookDetailsSegue") {
             let detailsViewController = segue.destination as? BookDetailsViewController
-            detailsViewController?.selectedBook = self.selectedBook
+            detailsViewController?.currentBook = self.selectedBook
         }
     }
 }

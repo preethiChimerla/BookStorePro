@@ -61,8 +61,7 @@ class AddBookViewController: UIViewController {
             self.bookPublisherLbl.text == "") {
             return false
         }
-        return true
-        
+        return true        
     }
     
     private func clearFormFields() -> Void {

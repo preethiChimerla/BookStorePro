@@ -33,6 +33,19 @@ class BooksAPIService {
         }
     }
     
+    static func getBookWithId(bookURL: String, completed: @escaping (Book?) -> Void) {
+        let getBookEndpoint = URL(string: API_ENDPOINT + bookURL)!
+        Alamofire.request(getBookEndpoint).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                completed(nil)
+                return
+            }
+            
+            let book = Book(response.result.value as! Dictionary<String, AnyObject>)
+            completed(book)
+        }
+    }
+    
     static func postNewBook(_ bookDict: Dictionary<String, String>, completed: @escaping (Bool) -> Void) {
         let postBooksEndpoint = URL(string: API_ENDPOINT + "/books")!
         Alamofire.request(postBooksEndpoint, method: .post, parameters: bookDict, encoding: JSONEncoding.default).responseJSON { (response) in
