@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -23,21 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BookStorePro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhP-ev-Qbh">
-                                <rect key="frame" x="113" y="321.5" width="150" height="24.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Eav-Ed-iHP"/>
-                                    <constraint firstAttribute="width" constant="150" id="s5C-bt-Gje"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="21"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QMM-gQ-gpe">
+                                <rect key="frame" x="67.5" y="248.5" width="240" height="170"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="OhP-ev-Qbh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="EZH-4w-YBL"/>
-                            <constraint firstItem="OhP-ev-Qbh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="YLL-JB-xYX"/>
+                            <constraint firstItem="QMM-gQ-gpe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1hy-jp-byV"/>
+                            <constraint firstItem="QMM-gQ-gpe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fVN-bF-na3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -47,4 +35,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="240" height="170"/>
+    </resources>
 </document>

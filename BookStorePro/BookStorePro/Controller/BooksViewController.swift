@@ -19,6 +19,7 @@ class BooksViewController: UIViewController{
         super.viewDidLoad()
         booksTableView.delegate = self
         booksTableView.dataSource = self
+        booksTableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
