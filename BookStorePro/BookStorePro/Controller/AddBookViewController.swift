@@ -16,8 +16,6 @@ class AddBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func onNewBookSubmit(_ sender: UIButton) {
@@ -37,7 +35,7 @@ class AddBookViewController: UIViewController {
                 }
             }
         } else {
-            self.popAlert(title: "Error", message: "Form fields cannot be empty")
+            self.popAlert(title: "Error", message: "Book details cannot be empty")
         }
     }
     

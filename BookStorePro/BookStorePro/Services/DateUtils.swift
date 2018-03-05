@@ -5,7 +5,9 @@
 //  Created by preethi Reddy on 3/3/18.
 //  Copyright © 2018 com.preethichimerla. All rights reserved.
 //
-
+/*
+ @brief Simple service file with Date utilities
+ */
 import Foundation
 
 class DateUtils {

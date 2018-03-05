@@ -20,8 +20,6 @@ class BookDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Even though we get complete Book details from selected row in table, we get the updated book from API in case book details
-        // are modified from another source.
         self.getBookDetails()
     }
 

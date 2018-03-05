@@ -20,6 +20,7 @@
 		DF31CF77204ACC3300AFD673 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31CF76204ACC3300AFD673 /* AddBookViewController.swift */; };
 		DF31CF7B204AF61500AFD673 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31CF7A204AF61500AFD673 /* BookDetailsViewController.swift */; };
 		DF31CF7D204B3DF000AFD673 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31CF7C204B3DF000AFD673 /* DateUtils.swift */; };
+		DF3A04F2204D169D008E89A1 /* BooksViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3A04F1204D169D008E89A1 /* BooksViewController+TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DF31CF76204ACC3300AFD673 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		DF31CF7A204AF61500AFD673 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 		DF31CF7C204B3DF000AFD673 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		DF3A04F1204D169D008E89A1 /* BooksViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BooksViewController+TableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				DF10C4802047BDD700F270C2 /* BooksViewController.swift */,
+				DF3A04F1204D169D008E89A1 /* BooksViewController+TableView.swift */,
 				DF31CF76204ACC3300AFD673 /* AddBookViewController.swift */,
 				DF31CF7A204AF61500AFD673 /* BookDetailsViewController.swift */,
 			);
@@ -277,6 +280,7 @@
 				DF31CF7D204B3DF000AFD673 /* DateUtils.swift in Sources */,
 				DF10C4872047BDD700F270C2 /* BookStorePro.xcdatamodeld in Sources */,
 				DF31CF77204ACC3300AFD673 /* AddBookViewController.swift in Sources */,
+				DF3A04F2204D169D008E89A1 /* BooksViewController+TableView.swift in Sources */,
 				DF10C49B2047D13D00F270C2 /* Book.swift in Sources */,
 				DF10C47F2047BDD700F270C2 /* AppDelegate.swift in Sources */,
 			);

@@ -19,13 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QMM-gQ-gpe">
-                                <rect key="frame" x="67.5" y="248.5" width="240" height="170"/>
+                                <rect key="frame" x="0.0" y="214" width="375" height="239"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="239" id="zcv-83-dhW"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="QMM-gQ-gpe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1hy-jp-byV"/>
-                            <constraint firstItem="QMM-gQ-gpe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fVN-bF-na3"/>
+                            <constraint firstItem="QMM-gQ-gpe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0zM-Xe-Vcr"/>
+                            <constraint firstItem="QMM-gQ-gpe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mBK-gx-k8X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QMM-gQ-gpe" secondAttribute="trailing" id="mjX-xH-AHM"/>
+                            <constraint firstItem="QMM-gQ-gpe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vSz-BM-N6e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
