@@ -6,7 +6,6 @@
 
 
 ## Implementation:
- - UI designed as per the mockups at http://prolific-interview.herokuapp.com/5a95a8a94ba45b000a4399df/
  - UI Components include TableView & a custom TableView cell, Text Fields, Buttons, NavigationControllers.
  - Used Auto Layouts, StackViews to align components
  - Used Alamofire Networking library to perform basic async networking calls to interact with API
